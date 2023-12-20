@@ -144,7 +144,7 @@ export const MapBoxTemperature = () => {
                 }
             }
             // Create the URLs
-            const baseUrl = "http://api.weatherapi.com/v1/current.json?";
+            const baseUrl = "https://api.weatherapi.com/v1/current.json?";
             const apiKey = 'd54bf972a648436d81d91957231812';
             const urls = points.map(point => baseUrl + "&q=" + point.lat + "," + point.lng + "&key=" + apiKey);
 
