@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ChakraProvider } from '@chakra-ui/react';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { MapBoxTemperature } from './components/MapBoxTemperature';
+import { Map } from './pages/Map';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Map />
+  },
+])
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 );
 
